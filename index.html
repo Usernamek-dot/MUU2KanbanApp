@@ -1,125 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="/materialize/css/materialize.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-     <meta charset="UTF-8" />
-     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <title>Kanban App</title>
-     <link rel="stylesheet" href="style.css">
-     <link href="/materialize/css/materialize.min.css" rel="stylesheet" />
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
+  <body>
+    <!-- navbar -->
 
-<body>
+    <div class="navbar-fixed">
+      <nav class="grey darken-3">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo"
+            ><span class="material-icons">task</span>Kanban App</a
+          >
+          <ul class="right">
+            <li>
+              <a
+                href="#"
+                class="btn modal-trigger waves-effect waves-light btn blue-grey darken-3"
+                href="#modal"
+                data-target="modal"
+                ><i class="material-icons">add</i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-     <!-- navbar -->
-
-     <div class="navbar-fixed">
-          <nav class="grey darken-3">
-               <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo"><span class="material-icons">task</span>Kanban App</a>
-                    <ul class="right hide-on-med-and-down">
-                         <li>
-                              <a href="#" class="waves-effect waves-light btn grey darken-3" href="#modal1"><i
-                                        class="material-icons">add</i></a>
-                              <!-- Modal Trigger -->
-                              <!-- <button data-target="modal1" class="btn modal-trigger waves-effect waves-light btn grey darken-3"><i
-                                   class="material-icons">add</i></button> -->
-
-
-                         </li>
-                         <div id="modal1" class="modal">
-                              <div class="modal-content">
-                                   <form>
-                                        <!-- date input -->
-                                        <input type="text" class="datepicker" id="datePickerId">
-                                        <!-- asignee input -->
-                                        <div class="input-field inline">
-                                             <input id="asigneeInput" type="text" class="validate">
-                                             <label for="asigneeInput">Asignee to</label>
-                                             <span class="helper-text" data-error="wrong" data-success="right">Helper
-                                                  text</span>
-                                        </div>
-                                        <!-- task  description input -->
-                                        <div class="row">
-                                             <div class="input-field col s12">
-                                                  <textarea data-length="100" id="taskInput"
-                                                       class="materialize-textarea"></textarea>
-                                                  <label for="taskInput">Task</label>
-                                             </div>
-                                        </div>
-                                        <!-- submit -->
-                                        <div class="modal-footer">
-                                             <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-                                                  id="btnSubmitId">Add</a>
-                                             <a href="#!"
-                                                  class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                                        </div>
-
-                                   </form>
-                              </div>
-                         </div>
-
-
-
-
-               </div>
-          </nav>
-     </div>
-
-
-
-     <!-- canva -->
-
-     <div class="container ">
-          <div class=" parent row z-depth-5">
-               <!-- titles -->
-               <div class="col s4">
-                    <div class=" input-field ">
-                         <input class="toDoTitle blue-grey darken-4" value="To Do" id="toDoListID" type="text">
-                    </div>
-               </div>
-               <div class="col s4 ">
-                    <div class="input-field ">
-                         <input class="toDoTitle blue-grey darken-4" value="Doing" id="doingListID" type="text">
-                    </div>
-               </div>
-               <div class="col s4 ">
-                    <div class="input-field ">
-                         <input class="toDoTitle blue-grey darken-4" value="Done" id="doneListID" type="text">
-                    </div>
-               </div>
-
-               <!-- boards -->
-               <div class="  blue-grey darken-3 child z-depth-2    ">
-
-                    <!-- <div class="card-panel blue-grey darken-2 ">
-                                   <h5>hello world</h5>
-                              </div> -->
-
-               </div>
-               <div class="  blue-grey darken-3 child z-depth-2 ">
-
-               </div>
-               <div class="  blue-grey darken-3 child z-depth-2 ">
-               </div>
+    <!-- modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <form id="formID">
+          <!-- date input -->
+          <input type="text" class="datepicker" id="datePickerID" />
+          <!-- asignee input -->
+          <div class="input-field inline">
+            <input id="asigneeInputID" type="text" class="validate" />
+            <label for="asigneeInputID">Asignee to</label>
+            <span class="helper-text" data-error="wrong" data-success="right"
+              >Helper text</span
+            >
           </div>
+          <!-- task  description input -->
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea
+                data-length="100"
+                id="taskInputID"
+                class="materialize-textarea"
+              ></textarea>
+              <label for="taskInputID">Task</label>
+            </div>
+          </div>
+          <!-- submit -->
+          <div class="modal-footer">
+            <a
+              href="#!"
+              class="modal-close waves-effect waves-green btn-flat"
+              id="btnSubmitId"
+              >Add</a
+            >
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+              >Cancel</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- canva -->
 
-     </div>
+    <div class="container">
+      <div class="parent row z-depth-5">
+        <!-- titles -->
+        <div class="col s4">
+          <div class="input-field">
+            <input
+              class="toDoTitle blue-grey darken-4"
+              value="To Do"
+              id="toDoListID"
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="input-field">
+            <input
+              class="toDoTitle blue-grey darken-4"
+              value="Doing"
+              id="doingListID"
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="input-field">
+            <input
+              class="toDoTitle blue-grey darken-4"
+              value="Done"
+              id="doneListID"
+              type="text"
+            />
+          </div>
+        </div>
 
+        <!-- boards -->
+        <div class="blue-grey darken-3 child z-depth-2">
+          <div class="card-panel blue-grey darken-2">
+            <h6>hello world</h6>
+          </div>
+          <div class="card-panel blue-grey darken-2">
+            <h6>hello world</h6>
+          </div>
+          <div class="card-panel blue-grey darken-2">
+            <h6>hello world</h6>
+          </div>
+          <div class="card-panel blue-grey darken-2">
+            <h6>hello world</h6>
+          </div>
+        </div>
+        <div class="blue-grey darken-3 child z-depth-2">
+          <div class="card-panel blue-grey darken-2">
+            <h6>hello world</h6>
+          </div>
+          <div class="card-panel blue-grey darken-2">
+            <h6>hello world</h6>
+          </div>
+        </div>
+        <div class="blue-grey darken-3 child z-depth-2">
+          <div class="card-panel blue-grey darken-2">
+            <h6>hello world</h6>
+          </div>
+          <div class="card-panel blue-grey darken-2">
+            <h6>hello world</h6>
+          </div>
+          <div class="card-panel blue-grey darken-2">
+            <h6>hello world</h6>
+          </div>
+          <div class="card-panel blue-grey darken-2">
+            <h6>hello world</h6>
+          </div>
+        </div>
+      </div>
+    </div>
 
-     <!-- add task modal -->
-     <!-- scripts -->
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
 
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-     <script src="materialize/js/materialize.min.js"></script>
-     <script>
-          document.addEventListener("DOMContentLoaded", function () {
-               var elems = document.querySelectorAll(".modal");
-               var instances = M.Modal.init(elems, options);
-          });
-     </script>
-</body>
-
+    <script src="helpers/triggerModal.js"></script>
+  </body>
 </html>
