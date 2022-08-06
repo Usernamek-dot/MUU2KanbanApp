@@ -1,6 +1,6 @@
-const sor = new Sortable.default(
+new Sortable.default(
   //calling task container
   document.querySelectorAll(".list-container"),
   //calling cards
-  { draggable: "div", animation: 150 }
+  { draggable: "article", animation: 150 }
 );
