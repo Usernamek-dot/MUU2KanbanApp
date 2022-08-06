@@ -1,23 +1,25 @@
 //Access form through id
-const form = document.querySelector("#formID");
+const form = document.getElementById("formID");
 
 form.addEventListener("submit", (ev) => {
   //avoid reloading the page
   ev.preventDefault();
   const formData = ev.target;
 
-  // get data to send to API
+  // get data from form to API
   const data = {
-    date: formData.dateTask.value,
-    // date: Number(moment().add(formData.deadLineTask.value, 'days').format('X')),
-
-    asignee: formData.asigneeTask.value,
-    task: formData.taskTask.value,
-    state: "to-do",
+    //sheet
+    toDo: {
+      date: formData.dateInputID.value,
+      asignee: formData.asigneeInputID.value,
+      task: formData.taskInputID.value,
+      state: "to-do",
+    },
   };
   //post data to API
+  console.log("this is data", data);
   axios
-    .post(`${API_URL}/tasks`, data)
+    .post(`${API_URL}`, data)
     .then((res) => {
       createTask(res.data);
       formData.reset();

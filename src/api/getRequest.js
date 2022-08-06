@@ -25,7 +25,7 @@ const createTask = (task) => {
   //title
   let titleTask = document.createElement("p");
   titleTask.classList.add("card-title");
-  titleTask.innerHTML = `<h5>Task</h5>`;
+  titleTask.innerHTML = `<i class="material-icons">assignment</i><h4>Task</h4> `;
 
   //date
   let dateTask = document.createElement("p");
