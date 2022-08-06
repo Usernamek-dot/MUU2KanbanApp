@@ -41,41 +41,56 @@
     <!-- modal -->
     <div id="modal" class="modal">
       <div class="modal-content">
-        <form id="formID">
-          <!-- date input -->
-          <input type="text" class="datepicker" id="datePickerID" />
-          <!-- asignee input -->
-          <div class="input-field inline">
-            <input id="asigneeInputID" type="text" class="validate" />
-            <label for="asigneeInputID">Asignee to</label>
-            <span class="helper-text" data-error="wrong" data-success="right"
-              >Helper text</span
-            >
+        <div class="row">
+          <div class="col s12">
+            <h4>Add New Task</h4>
           </div>
-          <!-- task  description input -->
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea
-                data-length="100"
-                id="taskInputID"
-                class="materialize-textarea"
-              ></textarea>
-              <label for="taskInputID">Task</label>
+          <form id="formID">
+            <!-- date input -->
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="dateInputID" type="text" class="datepicker" />
+                <label for="dateInputID">Date</label>
+              </div>
             </div>
-          </div>
-          <!-- submit -->
-          <div class="modal-footer">
-            <a
-              href="#!"
-              class="modal-close waves-effect waves-green btn-flat"
-              id="btnSubmitId"
-              >Add</a
-            >
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat"
-              >Cancel</a
-            >
-          </div>
-        </form>
+
+            <!-- asignee input -->
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="asigneeInputID" type="text" class="validate" />
+
+                <label for="asigneeInputID">Asignee to</label>
+              </div>
+            </div>
+
+            <!-- task  description input -->
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea
+                  data-length="100"
+                  id="taskInputID"
+                  class="materialize-textarea"
+                ></textarea>
+                <label for="taskInputID">Task</label>
+              </div>
+            </div>
+            <!-- submit -->
+            <div class="modal-footer">
+              <button
+                class="modal-close waves-effect waves-green btn-flat"
+                type="submit"
+              >
+                Add
+              </button>
+              <button
+                class="modal-close waves-effect waves-green btn-flat"
+                type="button"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <!-- canva -->
@@ -83,85 +98,54 @@
     <div class="container">
       <div class="parent row z-depth-5">
         <!-- titles -->
-        <div class="col s4">
-          <div class="input-field">
-            <input
-              class="toDoTitle blue-grey darken-4"
-              value="To Do"
-              id="toDoListID"
-              type="text"
-            />
+        <div class="row">
+          <div class="col s4">
+            <div class="input-field">
+              <input
+                class="toDoTitle blue-grey darken-4"
+                value="To Do"
+                id="toDoListID"
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="input-field">
+              <input
+                class="toDoTitle blue-grey darken-4"
+                value="Doing"
+                id="doingListID"
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="input-field">
+              <input
+                class="toDoTitle blue-grey darken-4"
+                value="Done"
+                id="doneListID"
+                type="text"
+              />
+            </div>
           </div>
         </div>
-        <div class="col s4">
-          <div class="input-field">
-            <input
-              class="toDoTitle blue-grey darken-4"
-              value="Doing"
-              id="doingListID"
-              type="text"
-            />
-          </div>
-        </div>
-        <div class="col s4">
-          <div class="input-field">
-            <input
-              class="toDoTitle blue-grey darken-4"
-              value="Done"
-              id="doneListID"
-              type="text"
-            />
-          </div>
-        </div>
-
-        <!-- to do board -->
-        <div
-          id="listToDoID"
-          class="list-container blue-grey darken-3 child z-depth-2"
-        >
-          <div class="card-panel blue-grey darken-2">
-            <h6>hello world</h6>
-          </div>
-          <div class="card-panel blue-grey darken-2">
-            <h6>hello world</h6>
-          </div>
-          <div class="card-panel blue-grey darken-2">
-            <h6>hello world</h6>
-          </div>
-          <div class="card-panel blue-grey darken-2">
-            <h6>hello world</h6>
-          </div>
-        </div>
-        <!-- doing board -->
-        <div
-          id="listDoingID"
-          class="list-container blue-grey darken-3 child z-depth-2"
-        >
-          <div class="card-panel blue-grey darken-2">
-            <h6>hello world</h6>
-          </div>
-          <div class="card-panel blue-grey darken-2">
-            <h6>hello world</h6>
-          </div>
-        </div>
-        <!-- done board -->
-
-        <div
-          id="listDoneID"
-          class="list-container blue-grey darken-3 child z-depth-2"
-        >
-          <div class="card-panel blue-grey darken-2">
-            <h6>hello world</h6>
-          </div>
-          <div class="card-panel blue-grey darken-2">
-            <h6>hello world</h6>
-          </div>
-          <div class="card-panel blue-grey darken-2">
-            <h6>hello world</h6>
-          </div>
-          <div class="card-panel blue-grey darken-2">
-            <h6>hello world</h6>
-          </div>
+        <div class="row">
+          <!-- to do board -->
+          <div
+            id="listToDoID"
+            class="list-container blue-grey darken-3 child z-depth-2"
+          ></div>
+          <!-- doing board -->
+          <div
+            id="listDoingID"
+            class="list-container blue-grey darken-3 child z-depth-2"
+          ></div>
+          <!-- done board -->
+          <div
+            id="listDoneID"
+            class="list-container blue-grey darken-3 child z-depth-2"
+          ></div>
         </div>
       </div>
     </div>
@@ -169,10 +153,14 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.12/draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/sortable.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+
     <script src="src/materialize/js/materialize.min.js"></script>
-    <script src="src/api/request.js"></script>
+    <script src="src/api/getRequest.js"></script>
+    <script src="src/api/postRequest.js"></script>
     <script src="src/helpers/drag.js"></script>
+    <script src="src/helpers/dateFormat.js"></script>
     <script src="src/helpers/triggerModal.js"></script>
   </body>
 </html>
