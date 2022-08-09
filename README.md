@@ -35,6 +35,7 @@ Moment js / https://momentjs.com/
 
 Sortable js / https://www.npmjs.com/package/sortablejs
 
-
+-----------
+api credentials : karol.sheety@gmail.com / passSheety
 
 
