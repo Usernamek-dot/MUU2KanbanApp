@@ -79,6 +79,7 @@
               <button
                 class="modal-close waves-effect waves-green btn-flat"
                 type="submit"
+                onclick="M.toast({html: 'Task has been added'})"
               >
                 Add
               </button>
@@ -130,22 +131,19 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div id="containerLists" class="row" >
           <!-- to do board -->
-          <div
-            id="listToDoID"
-            class="list-container blue-grey darken-3 child z-depth-2"
-          ></div>
+          <div id="to-do" class="list-container blue-grey darken-3 child z-depth-2">
+
+          </div>
           <!-- doing board -->
-          <div
-            id="listDoingID"
-            class="list-container blue-grey darken-3 child z-depth-2"
-          ></div>
+          <div id="doing" class="list-container blue-grey darken-3 child z-depth-2">
+
+          </div>
           <!-- done board -->
-          <div
-            id="listDoneID"
-            class="list-container blue-grey darken-3 child z-depth-2"
-          ></div>
+          <div id="done" class="list-container blue-grey darken-3 child z-depth-2">
+            
+          </div>
         </div>
       </div>
     </div>
@@ -159,11 +157,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/sortable.js"></script>
     <script src="https://momentjs.com/downloads/moment.js"></script>
 
+
     <script src="src/materialize/js/materialize.min.js"></script>
-    <script src="src/api/getRequest.js"></script>
+    <script src="src/api/requests.js"></script>
     <script src="src/api/postRequest.js"></script>
     <script src="src/helpers/drag.js"></script>
     <script src="src/helpers/dateFormat.js"></script>
     <script src="src/helpers/triggerModal.js"></script>
+
   </body>
 </html>

@@ -1,28 +1,28 @@
 //Access form through id
 const form = document.getElementById("formID");
 
-form.addEventListener("submit", (ev) => {
+form.addEventListener("submit", async (ev) => {
   //avoid reloading the page
   ev.preventDefault();
   const formData = ev.target;
 
-  // get data from form to API
+  // get data to send to API
   const data = {
     //sheet
-    toDo: {
+    todo: {
       date: formData.dateInputID.value,
       asignee: formData.asigneeInputID.value,
       task: formData.taskInputID.value,
       state: "to-do",
     },
   };
-  //post data to API
-  console.log("this is data", data);
-  axios
-    .post(`${API_URL}`, data)
+  console.log("data new task is", data);
+
+  await axios
+    .post(`${API_URL}`, data) //passing data to api
     .then((res) => {
-      createTask(res.data);
+      createTask(res.data.todo);
       formData.reset();
     })
-    .catch((err) => console.error("this is an erro with post request" + err));
+    .catch((err) => console.error("This is an error with post request" + err));
 });
