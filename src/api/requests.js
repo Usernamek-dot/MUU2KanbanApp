@@ -33,6 +33,11 @@ const createTask = (task) => {
   containerTask.innerHTML += newTask;
 };
 
+// tooltip for delete button
+$(document).ready(function () {
+  $(".tooltipped").tooltip();
+});
+
 let containerLists = document.getElementById("containerLists");
 
 containerLists.addEventListener("click", (e) => {
