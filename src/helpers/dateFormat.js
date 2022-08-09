@@ -1,4 +1,3 @@
-// const dateFormat = (time) => moment(time);
 const dateFormat = (time, format = "MMM Do YY") => moment(time).format(format);
 
 document.addEventListener("DOMContentLoaded", function () {

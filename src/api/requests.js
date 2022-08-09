@@ -14,9 +14,10 @@ axios
   .catch((err) => console.error("error at getting data:", err));
 
 const createTask = (task) => {
-  //console.log(task.state)
-  // Creating card content
+  //getting state of card
   let containerTask = document.getElementById(task.state);
+
+  //creating card content
   let newTask = `<article id="task${
     task.id
   }" class="card-panel text-color blue-grey darken-2">
@@ -30,17 +31,18 @@ const createTask = (task) => {
   }" class="btn-small waves-effect waves-light blue-grey darken-3 btn tooltipped" onclick="M.toast({html: 'Task has been deleted'})" data-position="bottom" data-tooltip="Click me 4 times" >delete</button>
                  </article>
   `;
-  containerTask.innerHTML += newTask;
+  containerTask.innerHTML += newTask; //adding card to container
 };
 
-let containerLists = document.getElementById("containerLists");
+let containerLists = document.getElementById("containerLists"); //calling all contianer lists
 
 containerLists.addEventListener("click", (e) => {
-  let id = e.path[0].attributes[2].value;
-  let idArticle = e.path[1].id;
-  deleteTask(id, idArticle);
+  let id = e.path[0].attributes[2].value; //getting data-idd attribute of button
+  let idArticle = e.path[1].id; //getting id of article
+  deleteTask(id, idArticle); //calling deleteTask function
 });
 
+//delete
 const deleteTask = async (id, idArticle) => {
   try {
     res = await axios.delete(`${API_URL}/${id}`);
