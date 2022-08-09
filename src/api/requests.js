@@ -1,5 +1,5 @@
 const API_URL =
-  "https://api.sheety.co/a4fbca92ad5c559214e321be2413b0e8/infoData/todo";
+  "https://api.sheety.co/c0d3ada03e2ef4a637dee5fc82ebdab5/infoDataa/todo";
 
 // map get request
 const getTasks = (data) => {
@@ -27,16 +27,11 @@ const createTask = (task) => {
                     
                     <button type="button" id="btndelete${task.id}" data-idd="${
     task.id
-  }" class="btn-small waves-effect waves-light blue-grey darken-3 btn tooltipped" onclick="M.toast({html: 'Task has been deleted'})" data-position="bottom" data-tooltip="Click me twice" >delete</button>
+  }" class="btn-small waves-effect waves-light blue-grey darken-3 btn tooltipped" onclick="M.toast({html: 'Task has been deleted'})" data-position="bottom" data-tooltip="Click me 4 times" >delete</button>
                  </article>
   `;
   containerTask.innerHTML += newTask;
 };
-
-// tooltip for delete button
-$(document).ready(function () {
-  $(".tooltipped").tooltip();
-});
 
 let containerLists = document.getElementById("containerLists");
 
@@ -55,3 +50,8 @@ const deleteTask = async (id, idArticle) => {
     console.log(err.statusText || "Unable to cancel");
   }
 };
+
+// tooltip for delete button
+$(document).ready(function () {
+  $(".tooltipped").tooltip();
+});
